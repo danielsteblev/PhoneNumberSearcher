@@ -12,7 +12,9 @@ def configure_routes(app):
     @app.route("/details", methods=['GET', 'POST'])
     def details():
         if request.method == 'POST':
-            number = request.form['number']
+            # заменяю все возможные варианты ввода номера телефона пользователем ('(', ')', '-', ' ')
+            number = request.form['number'].replace(" ", "")\
+                .replace("(", "").replace(")", "").replace("-", "")
             phone_number_info = fetcher.get_number_info(number=number)
             return render_template('details.html', phone_number_info=phone_number_info, number=number)
         return render_template('index.html')

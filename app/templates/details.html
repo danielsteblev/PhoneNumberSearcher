@@ -6,16 +6,16 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
 </head>
 <body>
-    <h1>Информация о номере телефона: {{ number }}</h1>
+    <h1>Информация о номере телефона: +7{{ number }}</h1>
     {% if phone_number_info %}
         {% if phone_number_info is string %}
             <p>{{ phone_number_info }}</p>
         {% else %}
             <div class="info">
-                <span>Регион:</span> {{ phone_number_info.get('region', 'Регион не найден!') }}
+                <span>Регион:</span> {{ phone_number_info.get('region', 'Ошибка ввода номера. Попробуйте ещё раз') }}
             </div>
             <div class="info">
-                <span>Оператор:</span> {{ phone_number_info.get('op', 'Оператор не найден!') }}
+                <span>Оператор:</span> {{ phone_number_info.get('op', 'Ошибка ввода номера. Попробуйте ещё раз') }}
             </div>
         {% endif %}
     {% else %}
