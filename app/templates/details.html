@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phone Number Information</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
+</head>
+<body>
+    <h1>Информация о номере телефона: {{ number }}</h1>
+    {% if phone_number_info %}
+        {% if phone_number_info is string %}
+            <p>{{ phone_number_info }}</p>
+        {% else %}
+            <div class="info">
+                <span>Регион:</span> {{ phone_number_info.get('region', 'Регион не найден!') }}
+            </div>
+            <div class="info">
+                <span>Оператор:</span> {{ phone_number_info.get('op', 'Оператор не найден!') }}
+            </div>
+        {% endif %}
+    {% else %}
+        <p>Информация о номере не найдена.</p>
+    {% endif %}
+    <form action="{{ url_for('index') }}" method="get">
+    <button type="submit" class="button">Вернуться на главную страницу</button>
+</form>
+</body>
+</html>
