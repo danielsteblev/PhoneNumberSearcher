@@ -4,8 +4,9 @@ body {
     padding: 20px;
 }
 
-h1 {
+h1, h2 {
     color: #333;
+    font-family: "Segoe UI"; font-weight: 500;
 }
 
 p {
@@ -17,6 +18,8 @@ table {
 	margin-bottom: 10px;
 	border: 1px solid #dddddd;
 	border-collapse: collapse;
+	font-family: "Segoe UI"; font-weight: 400;
+
 }
 table th {
 	padding: 5px;
@@ -46,25 +49,44 @@ a:hover {
 }
 
 input[type="text"] {
-    padding: 8px;
+    font-family: "Segoe UI"; font-weight: 500;
+    padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
+
+
 button {
-    background-color: #4CAF50; /* Green */
+    background-color: #008B8B;
     color: white;
-    padding: 10px 20px;
+    padding: 10px 50px;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
+    font-family: "Segoe UI"; font-weight: 500;
+
+}
+
+label {
+    font-family: "Segoe UI"; font-weight: 400;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #008080;
 }
 
 form {
     margin-top: 20px;
+}
+
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('fonts/segoeui.eot');
+    src: url('fonts/segoeui.eot?#iefix') format('embedded-opentype'),
+         url('fonts/segoeui.woff') format('woff'),
+         url('fonts/segoeui.svg#SegoeUI') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }

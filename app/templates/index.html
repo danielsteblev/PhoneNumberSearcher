@@ -2,15 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Информация о номере телефона</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
 </head>
 <body>
 <h1>Введите номер телефона без +7</h1>
 <form action="/details" method="post" enctype="multipart/form-data">
-    <input type="text" name="number" placeholder="Введите номер телефона">
+    <input type="text" name="number" placeholder="Введите номер...">
     <button type="submit">Получить информацию</button>
     <br/>
-    <label>Или выберите файл: (.csv, .json, .txt) </label>
+    <label style>Или выберите файл: (.csv, .json, .txt) </label>
     <input type="file" name="file"/>
 
 </form>

@@ -5,10 +5,10 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phone Numbers Info</title>
+    <title>Информация о номерах телефона</title>
 </head>
 <body>
-    <h2>Информация о номерах телефона:</h2>
+    <h1>Информация о номерах телефона:</h1>
     <table>
         <thead>
             <tr>
@@ -30,7 +30,7 @@
 
     <form action="/save_table" method="post">
         <input type="hidden" name="data" value="{{ numbers }}">
-        <input type="submit" value="Сохранить таблицу">
+        <button type="submit">Cохранить таблицу</button>
     </form>
 
 </body>

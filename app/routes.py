@@ -1,10 +1,6 @@
 import csv
 import json
-from lib2to3.pgen2.grammar import line
-from turtle import pd
 
-import requests
-from bs4 import BeautifulSoup
 from flask import render_template, request
 from src.PhoneNumberInformator import PhoneNumberInformator
 
