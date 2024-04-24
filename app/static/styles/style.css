@@ -12,6 +12,22 @@ p {
     color: #666;
 }
 
+table {
+	width: 60%;
+	margin-bottom: 10px;
+	border: 1px solid #dddddd;
+	border-collapse: collapse;
+}
+table th {
+	padding: 5px;
+	border: 1px solid #dddddd;
+}
+
+table td {
+	border: 1px solid #dddddd;
+	padding: 4px;
+}
+
 a {
     color: blue;
     text-decoration: none;

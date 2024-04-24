@@ -22,9 +22,9 @@ class PhoneNumberInformator:
                 return "Некорректно задан номер (или) информация о номере не найдена!"
 
             return {
-                'number': number,
-                'region': region,
-                'op': op
+                "number": number,
+                "region": region,
+                "op": op
             }
 
         except requests.RequestException as e:

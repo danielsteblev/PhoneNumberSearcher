@@ -1,3 +1,5 @@
+import csv
+import json
 from lib2to3.pgen2.grammar import line
 from turtle import pd
 
@@ -16,14 +18,18 @@ def configure_routes(app):
 
     @app.route("/save_table", methods=['POST'])
     def save_table():
-        html_content = request.form.get('html_table')
-        print(html_content)
+        data = request.form['data'].replace("'", '"')
+        data_json = json.loads(data)
+        print(data_json[0])
 
-        soup = BeautifulSoup(html_content, 'html.parser')
-        table = soup.find('table')
+        with open("output.csv", 'w', encoding='utf-8') as file:
+            csv_writer = csv.writer(file, delimiter=',')
+            csv_writer.writerow(['Номер', 'Регион', 'Оператор'])
 
-        return 'succses'
+            for item in data_json:
+                csv_writer.writerow([item['number'], item['region'], item['op']])
 
+        return f'Таблица сохранена в файл output.csv'
 
     @app.route("/details", methods=['GET', 'POST'])
     def details():
@@ -37,7 +43,6 @@ def configure_routes(app):
                     file.save(file.filename)
                     phone_numbers = read_numbers_from_file(file)
                     phone_info = [fetcher.get_number_info(number) for number in phone_numbers]
-                    print(phone_info)
                     return render_template('phone_numbers.html', numbers=phone_info)
 
                 else:  # иначе читаю с формы ввода

@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
     <title>Phone Numbers Info</title>
 </head>
 <body>
-    <h1>Информация о номерах телефона:</h1>
+    <h2>Информация о номерах телефона:</h2>
     <table>
         <thead>
             <tr>
@@ -28,7 +28,8 @@
         </tbody>
     </table>
 
-    <form action="/save_table" method="post" id="saveForm">
+    <form action="/save_table" method="post">
+        <input type="hidden" name="data" value="{{ numbers }}">
         <input type="submit" value="Сохранить таблицу">
     </form>
 
