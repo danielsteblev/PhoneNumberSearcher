@@ -1,5 +1,8 @@
 from lib2to3.pgen2.grammar import line
+from turtle import pd
 
+import requests
+from bs4 import BeautifulSoup
 from flask import render_template, request
 from src.PhoneNumberInformator import PhoneNumberInformator
 
@@ -10,6 +13,17 @@ def configure_routes(app):
     @app.route("/")
     def index():
         return render_template('index.html')
+
+    @app.route("/save_table", methods=['POST'])
+    def save_table():
+        html_content = request.form.get('html_table')
+        print(html_content)
+
+        soup = BeautifulSoup(html_content, 'html.parser')
+        table = soup.find('table')
+
+        return 'succses'
+
 
     @app.route("/details", methods=['GET', 'POST'])
     def details():
