@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
+    <title>Phone Numbers Info</title>
+</head>
+<body>
+    <h1>Информация о номерах телефона:</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Номер</th>
+                <th>Регион</th>
+                <th>Оператор</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for el in numbers %}
+                <tr>
+                    <td>+7{{ el.get('number') }}</td>
+                    <td>{{ el.get('region') }}</td>
+                    <td>{{ el.get('op') }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
