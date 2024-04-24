@@ -22,7 +22,7 @@ def configure_routes(app):
         data_json = json.loads(data)
         print(data_json[0])
 
-        with open("output.csv", 'w', encoding='utf-8') as file:
+        with open("output.csv", 'w', newline='', encoding='utf-8') as file:
             csv_writer = csv.writer(file, delimiter=',')
             csv_writer.writerow(['Номер', 'Регион', 'Оператор'])
 
